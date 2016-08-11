@@ -386,8 +386,8 @@
         <ctl name="MultiMedia2 Mixer INTERNAL_FM_TX" value="1" />
     </path>
 
-    <-- used in the single SIM case, 2G/3G/4G, or for the only SIM -->
-    <-- using 3G/4G, soft selected, in a double sim configuration  -->
+    <!-- used in the single SIM case, 2G/3G/4G, or for the only SIM -->
+    <!-- using 3G/4G, soft selected, in a double sim configuration  -->
     <path name="voice-call">
         <ctl name="PRI_MI2S_RX_Voice Mixer CSVoice" value="1" />
         <ctl name="Voice_Tx Mixer TERT_MI2S_TX_Voice" value="1" />
@@ -408,7 +408,7 @@
         <ctl name="Voice_Tx Mixer AFE_PCM_TX_Voice" value="1" />
     </path>
 
-    <-- used only in a dual SIM setting, for the SIM using 2G only -->
+    <!-- used only in a dual SIM setting, for the SIM using 2G only -->
     <path name="voice2-call">
         <ctl name="PRI_MI2S_RX_Voice Mixer Voice2" value="1" />
         <ctl name="Voice2_Tx Mixer TERT_MI2S_TX_Voice2" value="1" />

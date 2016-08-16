@@ -41,10 +41,10 @@ for FILE in `egrep -v '(^#|^$)' proprietary-files-qc.txt`; do
   if [[ ! "$FILE" =~ ^-.* ]]; then
     FILE=`echo ${PARSING_ARRAY[0]} | sed -e "s/^-//g"`
     DEST=${PARSING_ARRAY[1]}
-    if [ -n "$DEST" ]; then
-      FILE=$DEST
+    if [ -z "$DEST" ]; then
+      DEST=$FILE
     fi
-    echo "    $OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
+    echo "    $OUTDIR/proprietary/$FILE:system/$DEST$LINEEND" >> $MAKEFILE
   fi
 done
 (cat << EOF) >> $MAKEFILE
@@ -67,10 +67,10 @@ for FILE in `egrep -v '(^#|^$)' proprietary-files-crackling.txt`; do
   if [[ ! "$FILE" =~ ^-.* ]]; then
     FILE=`echo ${PARSING_ARRAY[0]} | sed -e "s/^-//g"`
     DEST=${PARSING_ARRAY[1]}
-    if [ -n "$DEST" ]; then
-      FILE=$DEST
+    if [ -z "$DEST" ]; then
+      DEST=$FILE
     fi
-    echo "    $OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
+    echo "    $OUTDIR/proprietary/$FILE:system/$DEST$LINEEND" >> $MAKEFILE
   fi
 done
 (cat << EOF) >> $MAKEFILE
@@ -93,10 +93,10 @@ for FILE in `egrep -v '(^#|^$)' proprietary-files.txt`; do
   if [[ ! "$FILE" =~ ^-.* ]]; then
     FILE=`echo ${PARSING_ARRAY[0]} | sed -e "s/^-//g"`
     DEST=${PARSING_ARRAY[1]}
-    if [ -n "$DEST" ]; then
-      FILE=$DEST
+    if [ -z "$DEST" ]; then
+      DEST=$FILE
     fi
-    echo "    $OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
+    echo "    $OUTDIR/proprietary/$FILE:system/$DEST$LINEEND" >> $MAKEFILE
   fi
 done
 (cat << EOF) >> $MAKEFILE

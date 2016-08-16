@@ -113,6 +113,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(LOCAL_PATH)/trunk-releasekey
 
+# Thermal
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
+
 # Add libboringssl-compat.so to provide BIO_f_base64
 TARGET_REQUIRES_B64_COMPAT = true
 PRODUCT_PACKAGES += \

@@ -89,6 +89,11 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12981353472
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_F2FS := true
+RECOVERY_VARIANT := twrp
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+TW_THEME := portrait_hdpi
+TW_NO_USB_STORAGE := true
+PRODUCT_COPY_FILES += $(DEVICE_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # WiFi - EAP-SIM
 #CONFIG_EAP_PROXY := qmi

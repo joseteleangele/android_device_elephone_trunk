@@ -32,3 +32,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/config
 
 # Disable ADB authentication
 ro.adb.secure=0
+
+# Update server
+cm.updater.uri=https://it-chefs.com/cm

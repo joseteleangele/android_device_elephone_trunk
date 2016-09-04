@@ -30,7 +30,6 @@ vendor/lib64/libbtnv.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libqomx_jpegenc.so
-vendor/lib/libqomx_jpegdec.so
 
 # Camera firmware
 etc/firmware/cpp_firmware_v1_1_1.fw
@@ -188,7 +187,7 @@ vendor/lib/libqmi.so
 vendor/lib/libsmemlog.so
 
 # Radio
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+#-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -app/shutdownlistener/shutdownlistener.apk
 bin/netmgrd
 bin/qmuxd

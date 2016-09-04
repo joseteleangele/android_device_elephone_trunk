@@ -18,8 +18,8 @@
 set -e
 
 # Required!
-DEVICE=elephone
-VENDOR=trunk
+DEVICE=trunk
+VENDOR=elephone
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

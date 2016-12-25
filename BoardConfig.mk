@@ -93,6 +93,7 @@ RECOVERY_VARIANT := twrp
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_THEME := portrait_hdpi
 TW_NO_USB_STORAGE := true
+TW_INCLUDE_CRYPTO := true
 PRODUCT_COPY_FILES += $(DEVICE_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # WiFi - EAP-SIM

@@ -97,8 +97,9 @@ TW_INCLUDE_CRYPTO := true
 PRODUCT_COPY_FILES += $(DEVICE_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # WiFi - EAP-SIM
-#CONFIG_EAP_PROXY := qmi
-#CONFIG_EAP_PROXY_DUAL_SIM := true
+CONFIG_EAP_PROXY := qmi
+CONFIG_EAP_PROXY_AKA_PRIME := true
+CONFIG_EAP_PROXY_DUAL_SIM := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \

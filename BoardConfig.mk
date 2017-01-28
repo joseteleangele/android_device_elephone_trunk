@@ -58,13 +58,7 @@ BOARD_CAMERA_SENSORS := \
    gc2355
 TARGET_USE_VENDOR_CAMERA_EXT := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-TARGET_USES_AOSP := true
-
-# Disable Jack & Jill compilation
-ANDROID_COMPILE_WITH_JACK := false
-
-# Flags
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+TARGET_USES_AOSP := false
 
 # GPS
 USE_DEVICE_SPECIFIC_GPS := true
@@ -106,6 +100,8 @@ BOARD_SEPOLICY_DIRS += \
     device/elephone/trunk/sepolicy
 
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
+TARGET_HW_DISK_ENCRYPTION := false
 
 # inherit from the proprietary version
 -include vendor/elephone/trunk/BoardConfigVendor.mk

@@ -3687,12 +3687,13 @@ int32_t QCameraParameters::setNumOfSnapshot()
                 nExpnum = 0;
                 const char *str_val = get(KEY_QC_CAPTURE_BURST_EXPOSURE);
                 if ((str_val != NULL) && (strlen(str_val) > 0)) {
-                    char *prop = (char *) calloc(1, strlen(str_val) + 1);
+                    size_t len = strlen(str_val) + 1;
+                    char *prop = (char *) calloc(1, len);
                     if (NULL == prop) {
                         ALOGE("%s: No memory for prop", __func__);
                         return NO_MEMORY;
                     }
-                    strlcpy(prop, str_val, strlen(str_val) + 1);
+                    strlcpy(prop, str_val, len);
                     char *saveptr = NULL;
                     char *token = strtok_r(prop, ",", &saveptr);
                     while (token != NULL) {
@@ -6553,12 +6554,13 @@ int32_t QCameraParameters::parseGains(const char *gainStr, double &r_gain,
                                           double &g_gain, double &b_gain)
 {
     char *saveptr = NULL;
-    char* gains = (char*) calloc(1, strlen(gainStr) + 1);
+    size_t len = strlen(gainStr) + 1;
+    char* gains = (char*) calloc(1, len);
     if (NULL == gains) {
         ALOGE("%s: No memory for gains", __func__);
         return NO_MEMORY;
     }
-    strlcpy(gains, gainStr, strlen(gainStr) + 1);
+    strlcpy(gains, gainStr, len);
     char *token = strtok_r(gains, ",", &saveptr);
     if (NULL == token) {
         ALOGE("%s:%d: strtok_r fails to find delimit", __func__,__LINE__);
@@ -8549,12 +8551,13 @@ uint8_t QCameraParameters::getBurstCountForAdvancedCapture()
       burstCount = 0;
       const char *str_val = m_AEBracketingClient.values;
       if ((str_val != NULL) && (strlen(str_val) > 0)) {
-          char *prop = (char *) calloc(1, strlen(str_val) + 1);
+          size_t len = strlen(str_val) + 1;
+          char *prop = (char *) calloc(1, len);
           if (NULL == prop) {
               ALOGE("%s: No memory for prop", __func__);
               return NO_MEMORY;
           }
-          strlcpy(prop, str_val, strlen(str_val) + 1);
+          strlcpy(prop, str_val, len);
           char *saveptr = NULL;
           char *token = strtok_r(prop, ",", &saveptr);
           while (token != NULL) {
@@ -9939,15 +9942,14 @@ int32_t QCameraParameters::commitParamChanges()
  * RETURN     : none
  *==========================================================================*/
 QCameraReprocScaleParam::QCameraReprocScaleParam(QCameraParameters *parent)
-  : mParent(parent),
-    mScaleEnabled(false),
+  : mScaleEnabled(false),
     mIsUnderScaling(false),
-    mScaleDirection(0),
     mNeedScaleCnt(0),
     mSensorSizeTblCnt(0),
     mSensorSizeTbl(NULL),
     mTotalSizeTblCnt(0)
 {
+    (void)parent;
     mPicSizeFromAPK.width = 0;
     mPicSizeFromAPK.height = 0;
     mPicSizeSetted.width = 0;

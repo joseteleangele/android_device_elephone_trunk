@@ -129,7 +129,8 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     libtinyxml \
     libstlport \
-    libxml2
+    libxml2 \
+    init.qcom.ssr.rc
 
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \

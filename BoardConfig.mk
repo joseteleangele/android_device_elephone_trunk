@@ -47,7 +47,7 @@ BOARD_RAMDISK_OFFSET     := 0x01000000
 
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/cyanogen/msm8916
-TARGET_KERNEL_CONFIG := cyanogenmod_trunk-64_defconfig
+TARGET_KERNEL_CONFIG := lineageos_trunk_defconfig
 
 # Bluetooth 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth

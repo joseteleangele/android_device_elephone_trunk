@@ -14,10 +14,10 @@
 
 $(call inherit-product, device/elephone/trunk/full_trunk.mk)
 
-# Inherit some common CM stuff.
+# Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_NAME := cm_trunk
+PRODUCT_NAME := lineage_trunk
 BOARD_VENDOR := elephone
 PRODUCT_DEVICE := trunk
 

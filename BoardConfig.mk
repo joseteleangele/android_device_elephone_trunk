@@ -105,7 +105,7 @@ TW_NO_USB_STORAGE := true
 TW_INCLUDE_CRYPTO := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 PRODUCT_COPY_FILES += $(DEVICE_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
-#endif
+endif
 
 
 # inherit from the proprietary version

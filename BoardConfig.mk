@@ -82,13 +82,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12981353472
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
-TARGET_USERIMAGES_USE_F2FS := true
-RECOVERY_VARIANT := twrp
-TARGET_RECOVERY_QCOM_RTC_FIX := true
-TW_THEME := portrait_hdpi
-TW_NO_USB_STORAGE := true
-TW_INCLUDE_CRYPTO := true
-PRODUCT_COPY_FILES += $(DEVICE_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
+TARGET_USERIMAGES_USE_F2FS := false
 
 # WiFi - EAP-SIM
 CONFIG_EAP_PROXY := qmi
@@ -102,6 +96,17 @@ BOARD_SEPOLICY_DIRS += \
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 TARGET_HW_DISK_ENCRYPTION := false
+
+# TWRP Support - Optional
+ifeq ($(WITH_TWRP),true)
+RECOVERY_VARIANT := twrp
+TW_THEME := portrait_hdpi
+TW_NO_USB_STORAGE := true
+TW_INCLUDE_CRYPTO := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+PRODUCT_COPY_FILES += $(DEVICE_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
+#endif
+
 
 # inherit from the proprietary version
 -include vendor/elephone/trunk/BoardConfigVendor.mk

@@ -35,11 +35,9 @@ fi
 
 if [ $# -eq 0 ]; then
   SRC=adb
-  SRC2=adb
 else
-  if [ $# -eq 2 ]; then
+  if [ $# -eq 1 ]; then
     SRC=$1
-    SRC2=$2
   else
     echo "$0: bad number of arguments"
     echo ""
@@ -54,7 +52,6 @@ fi
 # Initialize the helper
 setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
 
-extract "$MY_DIR"/proprietary-files-crackling.txt "$SRC2"
 extract "$MY_DIR"/proprietary-files-qc.txt "$SRC"
 extract "$MY_DIR"/proprietary-files.txt "$SRC"
 

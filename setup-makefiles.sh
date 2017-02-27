@@ -49,7 +49,6 @@ printf '\n%s\n' "ifeq (\$(QCPATH),)" >> "$PRODUCTMK"
 printf '\n%s\n' "ifeq (\$(QCPATH),)" >> "$ANDROIDMK"
 
 write_makefiles "$MY_DIR"/proprietary-files-qc.txt
-write_makefiles "$MY_DIR"/proprietary-files-crackling.txt
 
 printf '\n%s' "\$(call inherit-product, vendor/qcom/binaries/msm8916-32/graphics/graphics-vendor.mk)" >> "$PRODUCTMK"
 printf '\n%s\n' "\$(call inherit-product, vendor/qcom/binaries/msm8916-64/graphics/graphics-vendor.mk)" >> "$PRODUCTMK"

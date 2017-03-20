@@ -25,9 +25,9 @@ TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := trunk
-PRODUCT_NAME := full_trunk
-PRODUCT_BRAND := Elephone
-PRODUCT_MODEL := Elephone trunk
+PRODUCT_NAME := lineage_trunk
+PRODUCT_BRAND := elephone
+PRODUCT_MODEL := TRUNK
 PRODUCT_MANUFACTURER := elephone
 
 PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/elephone/trunk/releasekey

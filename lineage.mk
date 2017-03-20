@@ -17,16 +17,4 @@ $(call inherit-product, device/elephone/trunk/full_trunk.mk)
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_trunk
-BOARD_VENDOR := elephone
-PRODUCT_DEVICE := trunk
-
-PRODUCT_GMS_CLIENTID_BASE := android-trunk
-
-PRODUCT_MANUFACTURER := elephone
-PRODUCT_MODEL := Elephone Trunk
-
-PRODUCT_BRAND := trunk
-TARGET_VENDOR := elephone
-TARGET_VENDOR_PRODUCT_NAME := trunk
-TARGET_VENDOR_DEVICE_NAME := trunk
+PRODUCT_GMS_CLIENTID_BASE := android-elephone
